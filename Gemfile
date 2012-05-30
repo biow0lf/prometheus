@@ -33,6 +33,7 @@ group :development do
   # for guard readline support
   gem 'rb-readline'
   gem 'guard-rspec'
+  gem 'guard-bundler'
 end
 
 group :test do

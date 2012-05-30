@@ -44,6 +44,7 @@ group :development do
   gem 'rb-readline'
   gem 'guard-rspec'
   gem 'guard-bundler'
+  gem 'guard-migrate'
 end
 
 group :test do

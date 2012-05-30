@@ -7,6 +7,8 @@ gem 'rails', '3.2.4.rc1'
 
 gem 'sqlite3'
 
+gem 'brewdler', :require => false if RUBY_PLATFORM =~ /darwin/i
+
 
 # Gems used only for assets and not required
 # in production environments by default.

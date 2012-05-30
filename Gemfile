@@ -28,6 +28,10 @@ group :test, :development do
   gem 'rspec-rails'
 end
 
+group :development do
+  gem 'guard'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

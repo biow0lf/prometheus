@@ -30,6 +30,8 @@ end
 
 group :development do
   gem 'guard'
+  # for guard readline support
+  gem 'rb-readline'
   gem 'guard-rspec'
 end
 

@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class Repository < ActiveRecord::Base
   attr_accessible :distribution, :download_path, :name, :order_id, :short_url, :vendor
 
@@ -30,7 +32,7 @@ class Repository < ActiveRecord::Base
 #   has_many :mirrors
 #   has_many :patches
 #   has_many :ftbfs, class_name: "Ftbfs"
-#   has_many :repocops
+  has_many :repocops
 #   has_many :repocop_patches
 
   def to_param

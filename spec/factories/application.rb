@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 FactoryGirl.define do
   factory :repository do
   	factory :sisyphus_repository do

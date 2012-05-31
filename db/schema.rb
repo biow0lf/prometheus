@@ -11,7 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120530165735) do
+ActiveRecord::Schema.define(:version => 20120530184825) do
+
+  create_table "repocops", :force => true do |t|
+    t.integer  "repository_id", :null => false
+    t.string   "name",          :null => false
+    t.string   "version",       :null => false
+    t.string   "release",       :null => false
+    t.string   "arch",          :null => false
+    t.string   "srcname",       :null => false
+    t.string   "srcversion",    :null => false
+    t.string   "srcrel",        :null => false
+    t.string   "testname",      :null => false
+    t.string   "status"
+    t.text     "message"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "repocops", ["srcname"], :name => "index_repocops_on_srcname"
+  add_index "repocops", ["srcrel"], :name => "index_repocops_on_srcrel"
+  add_index "repocops", ["srcversion"], :name => "index_repocops_on_srcversion"
 
   create_table "repositories", :force => true do |t|
     t.string   "name",          :null => false

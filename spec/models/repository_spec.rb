@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'spec_helper'
 
 describe Repository do
@@ -10,7 +12,7 @@ describe Repository do
   	it { should validate_presence_of :order_id }
   end
 
-  # describe 'Associations' do
+  describe 'Associations' do
   #   it { should have_many :srpms }
   #   it { should have_many :packages }
   #   it { should have_many :groups }
@@ -19,9 +21,9 @@ describe Repository do
   #   it { should have_many :mirrors }
   #   it { should have_many :patches }
   #   it { should have_many :ftbfs }
-  #   it { should have_many :repocops }
+    it { should have_many :repocops }
   #   it { should have_many :repocop_patches }
-  # end
+  end
 
   it "should return Repository.name on .to_param" do
   	repository = FactoryGirl.build(:sisyphus_repository)

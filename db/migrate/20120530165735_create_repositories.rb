@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class CreateRepositories < ActiveRecord::Migration
   def change
     create_table :repositories do |t|

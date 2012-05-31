@@ -17,16 +17,16 @@ class Repocop < ActiveRecord::Base
   validates :srcrel, presence: true
   validates :testname, presence: true
 
-  def self.update_repocop
-    ActiveRecord::Base.transaction do
-      Repocop.delete_all
+  # def self.update_repocop
+  #   ActiveRecord::Base.transaction do
+  #     Repocop.delete_all
 
-      url = "http://repocop.altlinux.org/pub/repocop/prometeus2/prometeus2.sql"
-      file = open(URI.escape(url)).read
+  #     url = "http://repocop.altlinux.org/pub/repocop/prometeus2/prometeus2.sql"
+  #     file = open(URI.escape(url)).read
 
-      file.each_line do |line|
-        ActiveRecord::Base.connection.execute(line)
-      end
-    end
-  end
+  #     file.each_line do |line|
+  #       ActiveRecord::Base.connection.execute(line)
+  #     end
+  #   end
+  # end
 end

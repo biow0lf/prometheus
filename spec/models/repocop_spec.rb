@@ -25,13 +25,13 @@ describe Repocop do
   it { should have_db_index :srcversion }
   it { should have_db_index :srcrel }
 
-  it "should import repocops from url" do
-    page = `cat spec/data/prometeus2.sql`
-    FakeWeb.register_uri(:get,
-                         "http://repocop.altlinux.org/pub/repocop/prometeus2/prometeus2.sql",
-                         response: page)
-    expect{
-      Repocop.update_repocop
-      }.to change{ Repocop.count }.from(0).to(1)
-  end
+  # it "should import repocops from url" do
+  #   page = `cat spec/data/prometeus2.sql`
+  #   FakeWeb.register_uri(:get,
+  #                        "http://repocop.altlinux.org/pub/repocop/prometeus2/prometeus2.sql",
+  #                        response: page)
+  #   expect{
+  #     Repocop.update_repocop
+  #     }.to change{ Repocop.count }.from(0).to(1)
+  # end
 end

@@ -1,0 +1,9 @@
+Internal structure of redis cache used in prometheus:
+
+"#{repository.name}:#{srpm.name}:acls" list of acls.
+
+e.g. "Sisyphus:rpm:acls" => ['ldv', 'at']
+
+"#{repository.name}:#{maintainers}:#{maintainer.login}" list of maintainer acls.
+
+e.g. "Sisyphus:maintainers:ldv" => ['rpm']

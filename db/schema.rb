@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(:version => 20120601163939) do
   add_index "ftbfs", ["repository_id"], :name => "index_ftbfs_on_repository_id"
 
   create_table "groups", :force => true do |t|
-    t.string   "name"
-    t.integer  "repository_id"
+    t.string   "name",          :null => false
+    t.integer  "repository_id", :null => false
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"

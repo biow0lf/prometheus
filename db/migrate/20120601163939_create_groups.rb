@@ -3,8 +3,8 @@
 class CreateGroups < ActiveRecord::Migration
   def change
     create_table :groups do |t|
-      t.string :name
-      t.integer :repository_id
+      t.string :name, :null => false
+      t.integer :repository_id, :null => false
       t.integer :parent_id
       t.integer :lft
       t.integer :rgt

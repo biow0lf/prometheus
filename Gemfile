@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.5'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'rake', :require => false
 
 group :sqlite do
@@ -36,6 +33,10 @@ end
 
 gem 'jquery-rails'
 
+group :production, :development, :staging do
+  gem 'redis'
+end
+
 group :test, :development do
   gem 'rspec-rails'
 end
@@ -53,6 +54,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'fakeweb'
+  gem 'fakeredis'
 end
 
 # To use ActiveModel has_secure_password

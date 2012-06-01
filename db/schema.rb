@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120601151707) do
+ActiveRecord::Schema.define(:version => 20120601163939) do
 
   create_table "bugs", :force => true do |t|
     t.integer  "bug_id",       :null => false
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(:version => 20120601151707) do
 
   add_index "ftbfs", ["maintainer_id"], :name => "index_ftbfs_on_maintainer_id"
   add_index "ftbfs", ["repository_id"], :name => "index_ftbfs_on_repository_id"
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.integer  "repository_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "groups", ["repository_id"], :name => "index_groups_on_repository_id"
 
   create_table "maintainers", :force => true do |t|
     t.string   "name",                          :null => false

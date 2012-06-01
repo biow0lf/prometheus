@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120531181204) do
+ActiveRecord::Schema.define(:version => 20120601130815) do
+
+  create_table "ftbfs", :force => true do |t|
+    t.string   "name",          :null => false
+    t.string   "epoch"
+    t.string   "version",       :null => false
+    t.string   "release",       :null => false
+    t.integer  "weeks",         :null => false
+    t.string   "arch",          :null => false
+    t.integer  "repository_id", :null => false
+    t.integer  "maintainer_id", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "ftbfs", ["maintainer_id"], :name => "index_ftbfs_on_maintainer_id"
+  add_index "ftbfs", ["repository_id"], :name => "index_ftbfs_on_repository_id"
 
   create_table "maintainers", :force => true do |t|
     t.string   "name",                          :null => false

@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class CreateMaintainers < ActiveRecord::Migration
   def change
     create_table :maintainers do |t|

@@ -16,7 +16,7 @@ class Maintainer < ActiveRecord::Base
   # has_one :leader
   # has_many :teams
   # has_many :gears
-  # has_many :ftbfs, class_name: 'Ftbfs'
+  has_many :ftbfs, class_name: 'Ftbfs'
   # has_meny :repocops
 
   def to_param

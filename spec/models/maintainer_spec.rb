@@ -3,13 +3,13 @@
 require 'spec_helper'
 
 describe Maintainer do
-  # describe 'Associations' do
+  describe 'Associations' do
   #   it { should have_one :leader }
   #   it { should have_many :teams }
   #   it { should have_many :gears }
-  #   it { should have_many :ftbfs }
+    it { should have_many :ftbfs }
   #   it { should have_many :repocops }
-  # end
+  end
 
   describe 'Validation' do
     it { should validate_presence_of :name }

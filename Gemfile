@@ -4,6 +4,8 @@ gem 'rails', '3.2.5'
 
 gem 'rake', :require => false
 
+gem 'nested_set'
+
 group :sqlite do
   gem 'sqlite3'
 end

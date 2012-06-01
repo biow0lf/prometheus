@@ -50,10 +50,14 @@ ActiveRecord::Schema.define(:version => 20120601163939) do
   create_table "groups", :force => true do |t|
     t.string   "name"
     t.integer  "repository_id"
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
 
+  add_index "groups", ["parent_id"], :name => "index_groups_on_parent_id"
   add_index "groups", ["repository_id"], :name => "index_groups_on_repository_id"
 
   create_table "maintainers", :force => true do |t|

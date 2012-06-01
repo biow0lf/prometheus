@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120601130815) do
+ActiveRecord::Schema.define(:version => 20120601151707) do
+
+  create_table "bugs", :force => true do |t|
+    t.integer  "bug_id",       :null => false
+    t.string   "bug_status"
+    t.string   "resolution"
+    t.string   "bug_severity"
+    t.string   "product"
+    t.string   "component"
+    t.string   "assigned_to"
+    t.string   "reporter"
+    t.string   "short_desc"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "bugs", ["assigned_to"], :name => "index_bugs_on_assigned_to"
+  add_index "bugs", ["bug_status"], :name => "index_bugs_on_bug_status"
+  add_index "bugs", ["product"], :name => "index_bugs_on_product"
 
   create_table "ftbfs", :force => true do |t|
     t.string   "name",          :null => false
